@@ -1,15 +1,3 @@
-// ── Page Navigation ──────────────────────────────────────────
-function showPage(name) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById('page-' + name).classList.add('active');
-    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-    const navEl = document.getElementById('nav-' + name);
-    if (navEl) navEl.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    // Re-trigger fade-ins
-    setTimeout(observeFadeIns, 100);
-}
-
 // ── Mobile Menu ───────────────────────────────────────────────
 function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
@@ -17,6 +5,16 @@ function toggleMenu() {
     menu.classList.toggle('open');
     burger.classList.toggle('open');
 }
+
+document.addEventListener('click', e => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+    }
+});
 
 // ── Scroll to Contact ─────────────────────────────────────────
 function scrollToContact() {
@@ -51,25 +49,27 @@ function observeFadeIns() {
     const els = document.querySelectorAll('.fade-in');
     const obs = new IntersectionObserver(entries => {
         entries.forEach(e => {
-            if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                obs.unobserve(e.target);
+            }
         });
     }, { threshold: 0.12 });
-    els.forEach(el => { el.classList.remove('visible'); obs.observe(el); });
+    els.forEach(el => obs.observe(el));
 }
 
   // ── Navbar Scroll Shadow ──────────────────────────────────────
 window.addEventListener('scroll', () => {
     const nav = document.getElementById('navbar');
-    if (window.scrollY > 20) {
-        nav.style.background = 'rgba(7,14,9,.97)';
-    } else {
-        nav.style.background = 'rgba(7,14,9,.85)';
-    }
+    if (!nav) return;
+    nav.style.background = window.scrollY > 20
+        ? 'rgba(7,14,9,.97)'
+        : 'rgba(7,14,9,.85)';
 });
 
   // ── Form Submit ─────────────────────────────────────────────
-function handleFormSubmit() {
-    const btn = event.target;
+function handleFormSubmit(e) {
+    const btn = e.currentTarget;
     btn.textContent = '✓ Pesan Terkirim!';
     btn.style.background = 'var(--bronze)';
     setTimeout(() => {

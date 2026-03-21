@@ -1,787 +1,335 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bronze Sparks – Premium Scooters</title>
+  <meta name="description" content="Bronze Sparks adalah dealer scooter premium di Indonesia. Koleksi eksklusif dengan desain elegan, emisi nol, dan standar keamanan ISO 9001:2024.">
+  <meta property="og:title" content="Bronze Sparks – Premium Scooters Indonesia">
+  <meta property="og:description" content="Scooter premium untuk pasangan yang menghargai keanggunan dan keamanan. Temukan koleksi eksklusif kami di Jakarta.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bronzesparks.id/">
+  <title>Bronze Sparks – Premium Scooters Indonesia</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <link rel="icon" type="image/jpg" href="icon-transportation.svg">
+  <link rel="icon" type="image/png" href="icon-transportation.png">
+  <link rel="canonical" href="https://bronzesparks.id/">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoDealer",
+      "name": "Bronze Sparks",
+      "description": "Premium scooters crafted for elegance and safety.",
+      "url": "https://bronzesparks.id",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Sudirman No. 88",
+        "addressLocality": "Jakarta Selatan",
+        "addressCountry": "ID"
+      },
+      "telephone": "+622155007777"
+    }
+  </script>
 </head>
 <body>
 
   <nav id="navbar">
-    <div class="nav-logo"><span>Bronze</span> Sparks</div>
+    <div class="nav-logo"><a href="index.html"><span>Bronze</span> Sparks</a></div>
     <ul class="nav-links" id="navLinks">
-      <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
-      <li><a onclick="showPage('about')" id="nav-about">About</a></li>
-      <li><a onclick="showPage('shop')" id="nav-shop">Shop</a></li>
-      <li><a onclick="showPage('terms')" id="nav-terms">Terms</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="terms.html">Terms</a></li>
     </ul>
-    <button class="nav-cta" onclick="scrollToContact()">Call Us</button>
+    <a class="nav-cta" href="#contact-section">Call Us</a>
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </div>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a onclick="showPage('home');toggleMenu()">Home</a>
-    <a onclick="showPage('about');toggleMenu()">About</a>
-    <a onclick="showPage('shop');toggleMenu()">Shop</a>
-    <a onclick="showPage('terms');toggleMenu()">Terms of Service</a>
-    <a class="m-cta" onclick="scrollToContact();toggleMenu()">📞 Call Us Now</a>
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="about.html" onclick="toggleMenu()">About</a>
+    <a href="shop.html" onclick="toggleMenu()">Shop</a>
+    <a href="terms.html" onclick="toggleMenu()">Terms of Service</a>
+    <a class="m-cta" href="#contact-section" onclick="toggleMenu()">📞 Call Us Now</a>
   </div>
 
-  <div id="page-home" class="page active">
-    <section class="hero">
-      <div class="hero-left">
-        <div class="hero-tag">Premium Scooters</div>
-        <h1 class="hero-title">
-          Ride in <em>style.</em><br>Arrive in safety.
-        </h1>
-        <p class="hero-desc">
-          Crafted for couples who demand the finest — where mystery meets elegance
-          and every journey becomes a shared memory.
-        </p>
-        <div class="hero-actions">
-          <button class="btn-primary" onclick="showPage('shop')">Explore Collection</button>
-          <button class="btn-outline" onclick="scrollToContact()">Book a Call</button>
-        </div>
-      </div>
-      <div class="hero-right">
-        <div class="hero-visual"></div>
-        <div class="hero-scooter">
-          <!-- Inline SVG scooter illustration -->
-          <svg class="scooter-svg" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#1f7a45" stop-opacity=".4"/>
-                <stop offset="100%" stop-color="#1f7a45" stop-opacity="0"/>
-              </radialGradient>
-              <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#1f7a45"/>
-                <stop offset="100%" stop-color="#0d3d22"/>
-              </linearGradient>
-              <linearGradient id="wheelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#2a2a2a"/>
-                <stop offset="100%" stop-color="#111"/>
-              </linearGradient>
-            </defs>
-            <!-- Glow -->
-            <ellipse cx="200" cy="240" rx="160" ry="30" fill="url(#glow)"/>
-            <!-- Shadow -->
-            <ellipse cx="200" cy="252" rx="120" ry="12" fill="#000" opacity=".4"/>
-
-            <!-- Rear wheel -->
-            <circle cx="100" cy="220" r="48" fill="url(#wheelGrad)" stroke="#1f7a45" stroke-width="3"/>
-            <circle cx="100" cy="220" r="32" fill="none" stroke="#333" stroke-width="8"/>
-            <circle cx="100" cy="220" r="8" fill="#1f7a45"/>
-            <!-- Rear spokes -->
-            <g stroke="#444" stroke-width="2">
-              <line x1="100" y1="188" x2="100" y2="252"/>
-              <line x1="68" y1="220" x2="132" y2="220"/>
-              <line x1="77" y1="197" x2="123" y2="243"/>
-              <line x1="123" y1="197" x2="77" y2="243"/>
-            </g>
-
-            <!-- Front wheel -->
-            <circle cx="310" cy="220" r="44" fill="url(#wheelGrad)" stroke="#1f7a45" stroke-width="3"/>
-            <circle cx="310" cy="220" r="29" fill="none" stroke="#333" stroke-width="8"/>
-            <circle cx="310" cy="220" r="8" fill="#1f7a45"/>
-            <!-- Front spokes -->
-            <g stroke="#444" stroke-width="2">
-              <line x1="310" y1="191" x2="310" y2="249"/>
-              <line x1="281" y1="220" x2="339" y2="220"/>
-              <line x1="289" y1="199" x2="331" y2="241"/>
-              <line x1="331" y1="199" x2="289" y2="241"/>
-            </g>
-
-            <!-- Frame / body -->
-            <path d="M 100 220 Q 100 160 140 140 L 220 120 Q 240 115 260 120 L 310 150 L 310 220 Z"
-                  fill="url(#bodyGrad)" stroke="#28a05a" stroke-width="1.5" stroke-linejoin="round"/>
-
-            <!-- Step board -->
-            <rect x="130" y="190" width="140" height="22" rx="6" fill="#0d3d22" stroke="#1f7a45" stroke-width="1"/>
-
-            <!-- Seat -->
-            <ellipse cx="175" cy="130" rx="50" ry="14" fill="#0d2a18" stroke="#1f7a45" stroke-width="1.5"/>
-            <ellipse cx="175" cy="127" rx="50" ry="11" fill="#163d25"/>
-
-            <!-- Handlebar post -->
-            <rect x="292" y="100" width="10" height="62" rx="4" fill="#163d25" stroke="#1f7a45" stroke-width="1"/>
-            <!-- Handlebar -->
-            <rect x="272" y="97" width="50" height="9" rx="4.5" fill="#0d3d22" stroke="#1f7a45" stroke-width="1.5"/>
-            <!-- Grips -->
-            <rect x="270" y="96" width="14" height="11" rx="5" fill="#1f7a45"/>
-            <rect x="318" y="96" width="14" height="11" rx="5" fill="#1f7a45"/>
-
-            <!-- Headlight -->
-            <ellipse cx="330" cy="154" rx="14" ry="10" fill="#c9a96e" opacity=".7"/>
-            <ellipse cx="330" cy="154" rx="10" ry="7" fill="#e0c48a" opacity=".5"/>
-
-            <!-- Bronze accent stripe -->
-            <path d="M 140 155 Q 200 140 260 145" stroke="#c9a96e" stroke-width="2" fill="none" opacity=".8"/>
-
-            <!-- Logo on body -->
-            <text x="185" y="165" font-family="serif" font-size="11" fill="#c9a96e" opacity=".8" text-anchor="middle">BS</text>
-          </svg>
-        </div>
-        <div class="hero-badge">
-          <p>Certified Safe</p>
-          <h4>ISO 9001:2024</h4>
-        </div>
-      </div>
-      <div class="hero-line"></div>
-    </section>
-
-    <section class="section fade-in">
-      <div class="section-label">Why Bronze Sparks</div>
-      <h2 class="section-title">Designed for those who value <em>more</em></h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🛡️</div>
-          <h3>Safety First</h3>
-          <p>Every model meets the highest international safety standards. Ride with confidence, every single time.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">💚</div>
-          <h3>Zero Emissions</h3>
-          <p>Our electric lineup produces zero direct emissions — a thoughtful choice for a greener tomorrow.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">✨</div>
-          <h3>Luxury Craftsmanship</h3>
-          <p>Premium materials, refined finishes, and meticulous attention to detail in every component.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔋</div>
-          <h3>Long Range</h3>
-          <p>Up to 200km per charge — perfect for spontaneous city escapes and romantic evening rides.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📱</div>
-          <h3>Smart Connect</h3>
-          <p>Integrated app control for navigation, diagnostics, and theft protection at your fingertips.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🤝</div>
-          <h3>Lifetime Support</h3>
-          <p>Dedicated customer care and a nationwide service network — we're with you for every mile.</p>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-alt">
-      <div class="couple-banner">
-        <div class="couple-visual">
-          <div class="couple-visual-inner">
-            <svg viewBox="0 0 300 280" width="240" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="fg" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#1f7a45"/>
-                  <stop offset="100%" stop-color="#0d3d22"/>
-                </linearGradient>
-              </defs>
-              <!-- Two silhouettes on scooter -->
-              <!-- Scooter body -->
-              <ellipse cx="150" cy="240" rx="110" ry="16" fill="#000" opacity=".35"/>
-              <circle cx="70" cy="220" r="34" fill="#111" stroke="#1f7a45" stroke-width="2"/>
-              <circle cx="70" cy="220" r="20" fill="none" stroke="#333" stroke-width="6"/>
-              <circle cx="230" cy="220" r="34" fill="#111" stroke="#1f7a45" stroke-width="2"/>
-              <circle cx="230" cy="220" r="20" fill="none" stroke="#333" stroke-width="6"/>
-              <path d="M 70 220 Q 70 160 100 145 L 175 130 Q 200 125 220 135 L 230 180 L 230 220 Z"
-                    fill="url(#fg)" stroke="#28a05a" stroke-width="1.5"/>
-              <rect x="96" y="182" width="106" height="18" rx="5" fill="#0d2a18" stroke="#1f7a45" stroke-width="1"/>
-              <!-- Rider 1 (back) -->
-              <ellipse cx="135" cy="105" rx="14" ry="16" fill="#c9a96e" opacity=".75"/>
-              <rect x="122" y="120" width="26" height="40" rx="8" fill="#163d25" stroke="#1f7a45" stroke-width="1"/>
-              <!-- Rider 2 (front) -->
-              <ellipse cx="165" cy="100" rx="13" ry="15" fill="#c9a96e" opacity=".75"/>
-              <rect x="153" y="114" width="24" height="38" rx="7" fill="#1f7a45" stroke="#28a05a" stroke-width="1"/>
-              <!-- Handlebar -->
-              <rect x="208" y="100" width="7" height="46" rx="3" fill="#163d25" stroke="#1f7a45" stroke-width="1"/>
-              <rect x="196" y="98" width="36" height="7" rx="3" fill="#0d3d22" stroke="#1f7a45" stroke-width="1"/>
-              <!-- Heart -->
-              <text x="150" y="80" font-size="18" text-anchor="middle" fill="#c9a96e" opacity=".8">♥</text>
-            </svg>
-          </div>
-        </div>
-        <div class="couple-content section">
-          <div class="section-label">Made for Two</div>
-          <h2 class="section-title">Every ride is a <em>shared story</em></h2>
-          <p>
-            Bronze Sparks scooters are thoughtfully engineered for couples — with dual-comfort seating,
-            synchronized riding modes, and an intimate design language that reflects the bond between two.
-          </p>
-          <p>
-            Because the best journeys aren't about the destination. They're about who's beside you.
-          </p>
-          <button class="btn-primary" onclick="showPage('shop')">Find Your Pair</button>
-        </div>
-      </div>
-    </div>
-
-    <section class="section fade-in">
-      <div class="section-label">In Numbers</div>
-      <h2 class="section-title">Trust built over <em>years</em></h2>
-      <div class="stats-row">
-        <div class="stat">
-          <div class="stat-num">12K+</div>
-          <div class="stat-label">Happy Riders</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">98%</div>
-          <div class="stat-label">Safety Rating</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">15+</div>
-          <div class="stat-label">City Coverage</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">5★</div>
-          <div class="stat-label">Average Review</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt fade-in" id="contact-section">
-      <div class="section-label">Get in Touch</div>
-      <h2 class="section-title">Let's find your <em>perfect ride</em></h2>
-      <div class="contact-wrap">
-        <div class="contact-info">
-          <h3>We'd love to hear from you</h3>
-          <p>Have questions about our models, financing, or just want to take a test ride?
-            Our team is ready to assist. Give us a call — we're always happy to help.</p>
-          <div class="contact-detail">
-            <div class="icon">📞</div>
-            <div>
-              <strong>+62 21 5500 7777</strong>
-              <p>Mon – Sat, 09:00 – 18:00</p>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="icon">✉️</div>
-            <div>
-              <strong>hello@bronzesparks.id</strong>
-              <p>We reply within 24 hours</p>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="icon">📍</div>
-            <div>
-              <strong>Jl. Sudirman No. 88, Jakarta</strong>
-              <p>Showroom open daily</p>
-            </div>
-          </div>
-        </div>
-        <div class="contact-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label>First Name</label>
-              <input type="text" placeholder="Aria"/>
-            </div>
-            <div class="form-group">
-              <label>Last Name</label>
-              <input type="text" placeholder="Wibowo"/>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" placeholder="aria@example.com"/>
-          </div>
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" placeholder="+62 812 ..."/>
-          </div>
-          <div class="form-group">
-            <label>Message</label>
-            <textarea placeholder="I'm interested in the Velvet Series..."></textarea>
-          </div>
-          <button class="btn-primary" onclick="handleFormSubmit()" style="width:100%;padding:14px">Send Message</button>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="nav-logo"><span>Bronze</span> Sparks</div>
-          <p>Premium scooters crafted for those who seek elegance, safety, and the joy of shared journeys.</p>
-        </div>
-        <div class="footer-col">
-          <h5>Navigate</h5>
-          <ul>
-            <li><a onclick="showPage('home')">Home</a></li>
-            <li><a onclick="showPage('about')">About Us</a></li>
-            <li><a onclick="showPage('shop')">Shop</a></li>
-            <li><a onclick="scrollToContact()">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Products</h5>
-          <ul>
-            <li><a>Velvet Series</a></li>
-            <li><a>Mystic Duo</a></li>
-            <li><a>Aurora Lite</a></li>
-            <li><a>Heritage Classic</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Legal</h5>
-          <ul>
-            <li><a onclick="showPage('terms')">Terms of Service</a></li>
-            <li><a>Privacy Policy</a></li>
-            <li><a>Warranty Info</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2025 Bronze Sparks. All rights reserved.</p>
-        <p style="color:var(--green);font-size:.75rem;letter-spacing:.1em">RIDE TOGETHER. STAY SAFE.</p>
-      </div>
-    </footer>
-  </div>
-
-  <div id="page-about" class="page">
-    <div class="page-hero">
-      <div class="page-hero-inner">
-        <h1>Our <em>Story</em></h1>
-        <p>Born from a passion for safety and an eye for beauty — Bronze Sparks exists to redefine what premium riding means.</p>
-      </div>
-    </div>
-    <div class="divider"></div>
-
-    <section class="section">
-      <div class="about-story">
-        <div class="about-story-text">
-          <h2>A brand rooted in <em>purpose</em></h2>
-          <p>Bronze Sparks was founded on a single belief: that safety should never come at the cost of style. Our founders — both riders and dreamers — set out to create scooters that couples could truly fall in love with.</p>
-          <p>From our first prototype in a small Jakarta workshop to a nationally recognized name, every step has been guided by care, craftsmanship, and an unwavering commitment to the people who ride with us.</p>
-          <p>We believe that a scooter is more than a vehicle. It is a vessel for shared experiences — first rides, spontaneous detours, and quiet evenings together.</p>
-        </div>
-        <div class="about-visual">
-          <div class="about-visual-glow"></div>
-          <svg viewBox="0 0 280 220" width="220" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="ab" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#1f7a45"/>
-                <stop offset="100%" stop-color="#0d3d22"/>
-              </linearGradient>
-            </defs>
-            <ellipse cx="140" cy="195" rx="100" ry="14" fill="#000" opacity=".3"/>
-            <circle cx="60" cy="178" r="30" fill="#111" stroke="#1f7a45" stroke-width="2"/>
-            <circle cx="60" cy="178" r="18" fill="none" stroke="#222" stroke-width="5"/>
-            <circle cx="205" cy="178" r="30" fill="#111" stroke="#1f7a45" stroke-width="2"/>
-            <circle cx="205" cy="178" r="18" fill="none" stroke="#222" stroke-width="5"/>
-            <path d="M 60 178 Q 60 128 90 112 L 155 98 Q 178 94 196 104 L 205 148 L 205 178 Z"
-                  fill="url(#ab)" stroke="#28a05a" stroke-width="1.5"/>
-            <rect x="82" y="150" width="95" height="16" rx="4" fill="#0d2a18" stroke="#1f7a45" stroke-width="1"/>
-            <ellipse cx="128" cy="95" rx="38" ry="10" fill="#0d2a18" stroke="#1f7a45" stroke-width="1"/>
-            <rect x="185" y="78" width="6" height="38" rx="3" fill="#163d25" stroke="#1f7a45" stroke-width="1"/>
-            <rect x="174" y="76" width="28" height="6" rx="3" fill="#0d3d22" stroke="#1f7a45" stroke-width="1"/>
-            <circle cx="214" cy="118" rx="10" ry="7" fill="#c9a96e" opacity=".6"/>
-            <path d="M 100 118 Q 148 106 192 110" stroke="#c9a96e" stroke-width="1.5" fill="none" opacity=".7"/>
-          </svg>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt">
-      <div class="section-label">Our Values</div>
-      <h2 class="section-title" style="margin-bottom:48px">What we stand <em>for</em></h2>
-      <div class="values-grid">
-        <div class="value-card">
-          <span>01</span>
-          <h4>Safety Above All</h4>
-          <p>Every design decision starts with a safety question. We build confidence into every bolt, wire, and frame.</p>
-        </div>
-        <div class="value-card">
-          <span>02</span>
-          <h4>Elegant Mystique</h4>
-          <p>Beauty that intrigues. Our designs carry a quiet mystery — sophisticated without being cold.</p>
-        </div>
-        <div class="value-card">
-          <span>03</span>
-          <h4>Genuine Kindness</h4>
-          <p>From our team to our riders, we operate with warmth, transparency, and a genuine desire to help.</p>
-        </div>
-        <div class="value-card">
-          <span>04</span>
-          <h4>Shared Joy</h4>
-          <p>Every product is built with two in mind — because the best moments in life are always better together.</p>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="nav-logo"><span>Bronze</span> Sparks</div>
-          <p>Premium scooters crafted for those who seek elegance, safety, and the joy of shared journeys.</p>
-        </div>
-        <div class="footer-col">
-          <h5>Navigate</h5>
-          <ul>
-            <li><a onclick="showPage('home')">Home</a></li>
-            <li><a onclick="showPage('about')">About Us</a></li>
-            <li><a onclick="showPage('shop')">Shop</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Contact</h5>
-          <ul>
-            <li><a>+62 21 5500 7777</a></li>
-            <li><a>hello@bronzesparks.id</a></li>
-            <li><a>Jakarta Showroom</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Legal</h5>
-          <ul>
-            <li><a onclick="showPage('terms')">Terms of Service</a></li>
-            <li><a>Privacy Policy</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2025 Bronze Sparks. All rights reserved.</p>
-        <p style="color:var(--green);font-size:.75rem;letter-spacing:.1em">RIDE TOGETHER. STAY SAFE.</p>
-      </div>
-    </footer>
-  </div>
-
-  <div id="page-shop" class="page">
-    <div class="page-hero">
-      <div class="page-hero-inner">
-        <h1>Our <em>Collection</em></h1>
-        <p>Discover scooters born from the intersection of luxury, safety, and a love for shared adventures.</p>
-      </div>
-    </div>
-    <div class="divider"></div>
-
-    <section class="section">
-      <div class="section-label">All Models</div>
-      <h2 class="section-title">Find the one <em>made for you</em></h2>
-
-      <div class="shop-filters">
-        <button class="filter-btn active" onclick="filterProducts('all',this)">All Models</button>
-        <button class="filter-btn" onclick="filterProducts('electric',this)">Electric</button>
-        <button class="filter-btn" onclick="filterProducts('classic',this)">Classic</button>
-        <button class="filter-btn" onclick="filterProducts('sport',this)">Sport</button>
-      </div>
-
-      <div class="products-grid" id="productsGrid">
-
-        <div class="product-card" data-cat="electric">
-          <div class="product-img">
-            <div class="product-img-glow"></div>
-            <span class="product-badge-new">New</span>
-            <span class="product-badge-safe">Safe+</span>
-            <svg viewBox="0 0 200 160" width="140" xmlns="http://www.w3.org/2000/svg">
-              <defs><linearGradient id="p1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1f7a45"/><stop offset="100%" stop-color="#0a2e17"/></linearGradient></defs>
-              <circle cx="50" cy="128" r="26" fill="#111" stroke="#1f7a45" stroke-width="2"/>
-              <circle cx="50" cy="128" r="15" fill="none" stroke="#222" stroke-width="4"/>
-              <circle cx="154" cy="128" r="26" fill="#111" stroke="#1f7a45" stroke-width="2"/>
-              <circle cx="154" cy="128" r="15" fill="none" stroke="#222" stroke-width="4"/>
-              <path d="M 50 128 Q 50 88 72 76 L 118 64 Q 136 60 148 68 L 154 100 L 154 128 Z" fill="url(#p1)" stroke="#28a05a" stroke-width="1"/>
-              <rect x="66" y="104" width="70" height="12" rx="3" fill="#0d2a18" stroke="#1f7a45" stroke-width="1"/>
-              <ellipse cx="96" cy="62" rx="26" ry="7" fill="#0d2a18" stroke="#1f7a45" stroke-width="1"/>
-              <rect x="140" y="50" width="4" height="26" rx="2" fill="#163d25" stroke="#1f7a45" stroke-width="1"/>
-              <rect x="133" y="48" width="18" height="5" rx="2" fill="#0d3d22" stroke="#1f7a45" stroke-width="1"/>
-              <ellipse cx="158" cy="78" rx="8" ry="5" fill="#c9a96e" opacity=".6"/>
-            </svg>
-          </div>
-          <div class="product-info">
-            <h3>Velvet Series V2</h3>
-            <p class="tagline">Silent. Elegant. Effortless.</p>
-            <div class="product-footer">
-              <div class="product-price"><span>Rp</span> 48.500.000</div>
-              <button class="btn-sm">Inquire</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-cat="electric">
-          <div class="product-img">
-            <div class="product-img-glow"></div>
-            <span class="product-badge-safe">Safe+</span>
-            <svg viewBox="0 0 200 160" width="140" xmlns="http://www.w3.org/2000/svg">
-              <defs><linearGradient id="p2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2a6040"/><stop offset="100%" stop-color="#0a2e17"/></linearGradient></defs>
-              <circle cx="48" cy="130" r="25" fill="#111" stroke="#1f7a45" stroke-width="2"/>
-              <circle cx="48" cy="130" r="14" fill="none" stroke="#222" stroke-width="4"/>
-              <circle cx="156" cy="130" r="25" fill="#111" stroke="#1f7a45" stroke-width="2"/>
-              <circle cx="156" cy="130" r="14" fill="none" stroke="#222" stroke-width="4"/>
-              <path d="M 48 130 Q 50 90 76 78 L 125 66 Q 142 62 152 70 L 156 105 L 156 130 Z" fill="url(#p2)" stroke="#28a05a" stroke-width="1"/>
-              <rect x="68" y="106" width="72" height="12" rx="3" fill="#0d2a18" stroke="#1f7a45" stroke-width="1"/>
-              <ellipse cx="98" cy="63" rx="28" ry="8" fill="#0d2a18" stroke="#1f7a45" stroke-width="1"/>
-              <rect x="142" y="52" width="4" height="24" rx="2" fill="#163d25" stroke="#1f7a45" stroke-width="1"/>
-              <rect x="134" y="50" width="20" height="5" rx="2" fill="#0d3d22" stroke="#1f7a45" stroke-width="1"/>
-            </svg>
-          </div>
-          <div class="product-info">
-            <h3>Mystic Duo</h3>
-            <p class="tagline">Built for two. Designed for forever.</p>
-            <div class="product-footer">
-              <div class="product-price"><span>Rp</span> 55.000.000</div>
-              <button class="btn-sm">Inquire</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-cat="classic">
-          <div class="product-img">
-            <div class="product-img-glow"></div>
-            <svg viewBox="0 0 200 160" width="140" xmlns="http://www.w3.org/2000/svg">
-              <defs><linearGradient id="p3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1a5c35"/><stop offset="100%" stop-color="#07200f"/></linearGradient></defs>
-              <circle cx="46" cy="130" r="27" fill="#111" stroke="#1f7a45" stroke-width="2"/>
-              <circle cx="46" cy="130" r="16" fill="none" stroke="#222" stroke-width="5"/>
-              <circle cx="158" cy="130" r="27" fill="#111" stroke="#1f7a45" stroke-width="2"/>
-              <circle cx="158" cy="130" r="16" fill="none" stroke="#222" stroke-width="5"/>
-              <path d="M 46 130 Q 48 86 78 72 L 128 60 Q 148 56 158 66 L 158 106 L 158 130 Z" fill="url(#p3)" stroke="#28a05a" stroke-width="1"/>
-              <rect x="68" y="104" width="74" height="14" rx="4" fill="#0d2a18" stroke="#1f7a45" stroke-width="1"/>
-              <ellipse cx="100" cy="58" rx="30" ry="9" fill="#0d2a18" stroke="#1f7a45" stroke-width="1"/>
-              <rect x="144" y="46" width="5" height="28" rx="2" fill="#163d25" stroke="#1f7a45" stroke-width="1"/>
-              <rect x="135" y="44" width="22" height="6" rx="3" fill="#0d3d22" stroke="#1f7a45" stroke-width="1"/>
-              <path d="M 78 88 Q 120 78 152 82" stroke="#c9a96e" stroke-width="1.5" fill="none" opacity=".7"/>
-            </svg>
-          </div>
-          <div class="product-info">
-            <h3>Heritage Classic</h3>
-            <p class="tagline">Timeless looks. Modern soul.</p>
-            <div class="product-footer">
-              <div class="product-price"><span>Rp</span> 38.900.000</div>
-              <button class="btn-sm">Inquire</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-cat="sport">
-          <div class="product-img">
-            <div class="product-img-glow"></div>
-            <span class="product-badge-new">New</span>
-            <svg viewBox="0 0 200 160" width="140" xmlns="http://www.w3.org/2000/svg">
-              <defs><linearGradient id="p4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#145c30"/><stop offset="100%" stop-color="#071a0c"/></linearGradient></defs>
-              <circle cx="44" cy="132" r="26" fill="#111" stroke="#1f7a45" stroke-width="2"/>
-              <circle cx="44" cy="132" r="15" fill="none" stroke="#222" stroke-width="4"/>
-              <circle cx="160" cy="132" r="26" fill="#111" stroke="#1f7a45" stroke-width="2"/>
-              <circle cx="160" cy="132" r="15" fill="none" stroke="#222" stroke-width="4"/>
-              <path d="M 44 132 Q 46 80 90 64 L 138 55 Q 155 52 162 62 L 160 108 L 160 132 Z" fill="url(#p4)" stroke="#28a05a" stroke-width="1"/>
-              <rect x="72" y="102" width="76" height="14" rx="4" fill="#0d2a18" stroke="#1f7a45" stroke-width="1"/>
-              <ellipse cx="100" cy="53" rx="28" ry="8" fill="#071810" stroke="#1f7a45" stroke-width="1"/>
-              <rect x="147" y="44" width="5" height="26" rx="2" fill="#163d25" stroke="#1f7a45" stroke-width="1"/>
-              <rect x="138" y="42" width="22" height="5" rx="2" fill="#0d3d22" stroke="#1f7a45" stroke-width="1"/>
-              <line x1="84" y1="132" x2="160" y2="80" stroke="#c9a96e" stroke-width="1" opacity=".5"/>
-            </svg>
-          </div>
-          <div class="product-info">
-            <h3>Aurora Sport GT</h3>
-            <p class="tagline">Speed meets safety. Always.</p>
-            <div class="product-footer">
-              <div class="product-price"><span>Rp</span> 62.000.000</div>
-              <button class="btn-sm">Inquire</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-cat="electric">
-          <div class="product-img">
-            <div class="product-img-glow"></div>
-            <span class="product-badge-safe">Safe+</span>
-            <svg viewBox="0 0 200 160" width="140" xmlns="http://www.w3.org/2000/svg">
-              <defs><linearGradient id="p5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1f7a45"/><stop offset="100%" stop-color="#0a2e17"/></linearGradient></defs>
-              <circle cx="48" cy="128" r="26" fill="#111" stroke="#1f7a45" stroke-width="2"/>
-              <circle cx="48" cy="128" r="15" fill="none" stroke="#222" stroke-width="4"/>
-              <circle cx="154" cy="128" r="26" fill="#111" stroke="#1f7a45" stroke-width="2"/>
-              <circle cx="154" cy="128" r="15" fill="none" stroke="#222" stroke-width="4"/>
-              <path d="M 48 128 Q 50 86 76 72 L 122 60 Q 140 56 152 66 L 154 102 L 154 128 Z" fill="url(#p5)" stroke="#28a05a" stroke-width="1"/>
-              <rect x="68" y="102" width="68" height="12" rx="3" fill="#0d2a18" stroke="#1f7a45" stroke-width="1"/>
-              <ellipse cx="96" cy="58" rx="26" ry="7" fill="#0d2a18" stroke="#1f7a45" stroke-width="1"/>
-              <rect x="140" y="48" width="4" height="24" rx="2" fill="#163d25" stroke="#1f7a45" stroke-width="1"/>
-              <rect x="132" y="46" width="18" height="4" rx="2" fill="#0d3d22" stroke="#1f7a45" stroke-width="1"/>
-              <ellipse cx="158" cy="76" rx="8" ry="5" fill="#c9a96e" opacity=".5"/>
-            </svg>
-          </div>
-          <div class="product-info">
-            <h3>Aurora Lite</h3>
-            <p class="tagline">Light. Nimble. Perfectly balanced.</p>
-            <div class="product-footer">
-              <div class="product-price"><span>Rp</span> 32.500.000</div>
-              <button class="btn-sm">Inquire</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-cat="classic">
-          <div class="product-img">
-            <div class="product-img-glow"></div>
-            <svg viewBox="0 0 200 160" width="140" xmlns="http://www.w3.org/2000/svg">
-              <defs><linearGradient id="p6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#163d25"/><stop offset="100%" stop-color="#070e09"/></linearGradient></defs>
-              <circle cx="46" cy="130" r="26" fill="#111" stroke="#1f7a45" stroke-width="2"/>
-              <circle cx="46" cy="130" r="15" fill="none" stroke="#222" stroke-width="4"/>
-              <circle cx="156" cy="130" r="26" fill="#111" stroke="#1f7a45" stroke-width="2"/>
-              <circle cx="156" cy="130" r="15" fill="none" stroke="#222" stroke-width="4"/>
-              <path d="M 46 130 Q 48 88 76 74 L 124 62 Q 143 58 154 67 L 156 104 L 156 130 Z" fill="url(#p6)" stroke="#28a05a" stroke-width="1.5"/>
-              <rect x="66" y="104" width="72" height="13" rx="3" fill="#0d2a18" stroke="#1f7a45" stroke-width="1"/>
-              <ellipse cx="98" cy="60" rx="28" ry="8" fill="#0a200f" stroke="#1f7a45" stroke-width="1"/>
-              <rect x="141" y="48" width="5" height="25" rx="2" fill="#163d25" stroke="#1f7a45" stroke-width="1"/>
-              <rect x="132" y="46" width="20" height="5" rx="2" fill="#0d3d22" stroke="#1f7a45" stroke-width="1"/>
-              <path d="M 76 90 Q 116 80 148 83" stroke="#c9a96e" stroke-width="1.5" fill="none" opacity=".8"/>
-              <path d="M 76 97 Q 116 88 148 91" stroke="#c9a96e" stroke-width="1" fill="none" opacity=".4"/>
-            </svg>
-          </div>
-          <div class="product-info">
-            <h3>Noir Edition</h3>
-            <p class="tagline">The dark horse of our lineup.</p>
-            <div class="product-footer">
-              <div class="product-price"><span>Rp</span> 44.000.000</div>
-              <button class="btn-sm">Inquire</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt" style="text-align:center">
-      <h2 class="section-title" style="margin:0 auto 20px;text-align:center">Not sure which model? <em>Call us.</em></h2>
-      <p style="color:var(--muted);max-width:480px;margin:0 auto 36px;font-size:.92rem">
-        Our product specialists are happy to guide you to the perfect choice for your lifestyle and budget.
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">Premium Scooters</div>
+      <h1 class="hero-title">
+        Ride in <em>style.</em><br>Arrive in safety.
+      </h1>
+      <p class="hero-desc">
+        Crafted for couples who demand the finest — where mystery meets elegance
+        and every journey becomes a shared memory.
       </p>
-      <button class="btn-primary" onclick="scrollToContactShop()">📞 +62 21 5500 7777</button>
-    </section>
-
-    <footer>
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="nav-logo"><span>Bronze</span> Sparks</div>
-          <p>Premium scooters crafted for those who seek elegance, safety, and the joy of shared journeys.</p>
-        </div>
-        <div class="footer-col">
-          <h5>Navigate</h5>
-          <ul>
-            <li><a onclick="showPage('home')">Home</a></li>
-            <li><a onclick="showPage('about')">About Us</a></li>
-            <li><a onclick="showPage('shop')">Shop</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Contact</h5>
-          <ul>
-            <li><a>+62 21 5500 7777</a></li>
-            <li><a>hello@bronzesparks.id</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Legal</h5>
-          <ul>
-            <li><a onclick="showPage('terms')">Terms of Service</a></li>
-            <li><a>Privacy Policy</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2025 Bronze Sparks. All rights reserved.</p>
-        <p style="color:var(--green);font-size:.75rem;letter-spacing:.1em">RIDE TOGETHER. STAY SAFE.</p>
-      </div>
-    </footer>
-  </div>
-
-  <div id="page-terms" class="page">
-    <div class="page-hero">
-      <div class="page-hero-inner">
-        <h1>Terms of <em>Service</em></h1>
-        <p>Please read these terms carefully before using our website or purchasing our products.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="shop.html">Explore Collection</a>
+        <a class="btn-outline" href="#contact-section">Book a Call</a>
       </div>
     </div>
-    <div class="divider"></div>
-
-    <section class="section">
-      <div class="terms-wrap">
-        <p class="terms-date">Last updated: December 2025</p>
-
-        <h2>1. Acceptance of Terms</h2>
-        <p>By accessing or using the Bronze Sparks website ("Site") and purchasing our products, you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our Site or services.</p>
-
-        <h2>2. Products and Pricing</h2>
-        <p>All product descriptions, specifications, and pricing on our Site are subject to change without prior notice. We reserve the right to limit quantities and to refuse or cancel orders at our discretion.</p>
-        <ul>
-          <li>Prices are displayed in Indonesian Rupiah (IDR) and are inclusive of applicable taxes unless stated otherwise.</li>
-          <li>Product images are for illustration purposes and may vary slightly from the actual product.</li>
-          <li>Availability of products is subject to stock and may change without notice.</li>
-        </ul>
-
-        <h2>3. Orders and Payment</h2>
-        <p>All orders are subject to confirmation and acceptance by Bronze Sparks. We accept payment via bank transfer, credit card, and approved financing partners. Full payment or an approved financing arrangement is required before delivery.</p>
-
-        <h2>4. Delivery and Shipping</h2>
-        <p>We offer delivery within Indonesia. Delivery timelines are estimates only and Bronze Sparks shall not be liable for delays caused by third-party logistics providers, customs, or circumstances beyond our control.</p>
-        <ul>
-          <li>Standard delivery: 5–10 business days within Java.</li>
-          <li>Outer islands: 10–20 business days depending on location.</li>
-          <li>Delivery charges, if any, will be communicated at checkout.</li>
-        </ul>
-
-        <h2>5. Warranty</h2>
-        <p>All Bronze Sparks scooters come with a standard manufacturer's warranty. Coverage details vary by model and are included in your product documentation. Warranty does not cover damage caused by misuse, accidents, unauthorized modifications, or normal wear and tear.</p>
-
-        <h2>6. Returns and Refunds</h2>
-        <p>We accept returns within 14 days of delivery for products that are unused, in original packaging, and accompanied by proof of purchase. Refunds will be processed within 14 business days of receiving the returned item. Customized or special-order items are non-refundable.</p>
-
-        <h2>7. Intellectual Property</h2>
-        <p>All content on this Site — including text, graphics, logos, images, and software — is the property of Bronze Sparks and is protected by applicable intellectual property laws. Unauthorized use is strictly prohibited.</p>
-
-        <h2>8. Privacy</h2>
-        <p>Your privacy matters to us. Our Privacy Policy, which is incorporated into these Terms by reference, explains how we collect, use, and protect your personal information. By using our Site, you consent to our data practices as described in the Privacy Policy.</p>
-
-        <h2>9. Limitation of Liability</h2>
-        <p>To the fullest extent permitted by law, Bronze Sparks shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our products or Site. Our total liability shall not exceed the purchase price of the product in question.</p>
-
-        <h2>10. Changes to Terms</h2>
-        <p>We reserve the right to update these Terms at any time. Changes will be posted on this page with the updated date. Continued use of the Site after changes constitute acceptance of the revised Terms.</p>
-
-        <h2>11. Contact</h2>
-        <p>For any questions regarding these Terms, please contact us at:</p>
-        <p><strong style="color:var(--cream)">Bronze Sparks Indonesia</strong><br/>
-        Jl. Sudirman No. 88, Jakarta Selatan<br/>
-        Email: legal@bronzesparks.id<br/>
-        Phone: +62 21 5500 7777</p>
+    <div class="hero-right">
+      <div class="hero-visual"></div>
+      <div class="hero-scooter">
+        <svg class="scooter-svg" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#1f7a45" stop-opacity=".4"/>
+              <stop offset="100%" stop-color="#1f7a45" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1f7a45"/>
+              <stop offset="100%" stop-color="#0d3d22"/>
+            </linearGradient>
+            <linearGradient id="wheelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2a2a2a"/>
+              <stop offset="100%" stop-color="#111"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="200" cy="240" rx="160" ry="30" fill="url(#glow)"/>
+          <ellipse cx="200" cy="252" rx="120" ry="12" fill="#000" opacity=".4"/>
+          <circle cx="100" cy="220" r="48" fill="url(#wheelGrad)" stroke="#1f7a45" stroke-width="3"/>
+          <circle cx="100" cy="220" r="32" fill="none" stroke="#333" stroke-width="8"/>
+          <circle cx="100" cy="220" r="8" fill="#1f7a45"/>
+          <g stroke="#444" stroke-width="2">
+            <line x1="100" y1="188" x2="100" y2="252"/>
+            <line x1="68" y1="220" x2="132" y2="220"/>
+            <line x1="77" y1="197" x2="123" y2="243"/>
+            <line x1="123" y1="197" x2="77" y2="243"/>
+          </g>
+          <circle cx="310" cy="220" r="44" fill="url(#wheelGrad)" stroke="#1f7a45" stroke-width="3"/>
+          <circle cx="310" cy="220" r="29" fill="none" stroke="#333" stroke-width="8"/>
+          <circle cx="310" cy="220" r="8" fill="#1f7a45"/>
+          <g stroke="#444" stroke-width="2">
+            <line x1="310" y1="191" x2="310" y2="249"/>
+            <line x1="281" y1="220" x2="339" y2="220"/>
+            <line x1="289" y1="199" x2="331" y2="241"/>
+            <line x1="331" y1="199" x2="289" y2="241"/>
+          </g>
+          <path d="M 100 220 Q 100 160 140 140 L 220 120 Q 240 115 260 120 L 310 150 L 310 220 Z"
+                fill="url(#bodyGrad)" stroke="#28a05a" stroke-width="1.5" stroke-linejoin="round"/>
+          <rect x="130" y="190" width="140" height="22" rx="6" fill="#0d3d22" stroke="#1f7a45" stroke-width="1"/>
+          <ellipse cx="175" cy="130" rx="50" ry="14" fill="#0d2a18" stroke="#1f7a45" stroke-width="1.5"/>
+          <ellipse cx="175" cy="127" rx="50" ry="11" fill="#163d25"/>
+          <rect x="292" y="100" width="10" height="62" rx="4" fill="#163d25" stroke="#1f7a45" stroke-width="1"/>
+          <rect x="272" y="97" width="50" height="9" rx="4.5" fill="#0d3d22" stroke="#1f7a45" stroke-width="1.5"/>
+          <rect x="270" y="96" width="14" height="11" rx="5" fill="#1f7a45"/>
+          <rect x="318" y="96" width="14" height="11" rx="5" fill="#1f7a45"/>
+          <ellipse cx="330" cy="154" rx="14" ry="10" fill="#c9a96e" opacity=".7"/>
+          <ellipse cx="330" cy="154" rx="10" ry="7" fill="#e0c48a" opacity=".5"/>
+          <path d="M 140 155 Q 200 140 260 145" stroke="#c9a96e" stroke-width="2" fill="none" opacity=".8"/>
+          <text x="185" y="165" font-family="serif" font-size="11" fill="#c9a96e" opacity=".8" text-anchor="middle">BS</text>
+        </svg>
       </div>
-    </section>
+      <div class="hero-badge">
+        <p>Certified Safe</p>
+        <h4>ISO 9001:2024</h4>
+      </div>
+    </div>
+    <div class="hero-line"></div>
+  </section>
 
-    <footer>
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="nav-logo"><span>Bronze</span> Sparks</div>
-          <p>Premium scooters crafted for those who seek elegance, safety, and the joy of shared journeys.</p>
-        </div>
-        <div class="footer-col">
-          <h5>Navigate</h5>
-          <ul>
-            <li><a onclick="showPage('home')">Home</a></li>
-            <li><a onclick="showPage('about')">About Us</a></li>
-            <li><a onclick="showPage('shop')">Shop</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Contact</h5>
-          <ul>
-            <li><a>+62 21 5500 7777</a></li>
-            <li><a>hello@bronzesparks.id</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Legal</h5>
-          <ul>
-            <li><a onclick="showPage('terms')">Terms of Service</a></li>
-            <li><a>Privacy Policy</a></li>
-          </ul>
+  <section class="section fade-in">
+    <div class="section-label">Why Bronze Sparks</div>
+    <h2 class="section-title">Designed for those who value <em>more</em></h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>Safety First</h3>
+        <p>Every model meets the highest international safety standards. Ride with confidence, every single time.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💚</div>
+        <h3>Zero Emissions</h3>
+        <p>Our electric lineup produces zero direct emissions — a thoughtful choice for a greener tomorrow.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✨</div>
+        <h3>Luxury Craftsmanship</h3>
+        <p>Premium materials, refined finishes, and meticulous attention to detail in every component.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔋</div>
+        <h3>Long Range</h3>
+        <p>Up to 200km per charge — perfect for spontaneous city escapes and romantic evening rides.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3>Smart Connect</h3>
+        <p>Integrated app control for navigation, diagnostics, and theft protection at your fingertips.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤝</div>
+        <h3>Lifetime Support</h3>
+        <p>Dedicated customer care and a nationwide service network — we're with you for every mile.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-alt">
+    <div class="couple-banner">
+      <div class="couple-visual">
+        <div class="couple-visual-inner">
+          <svg viewBox="0 0 300 280" width="240" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="fg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1f7a45"/>
+                <stop offset="100%" stop-color="#0d3d22"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="150" cy="240" rx="110" ry="16" fill="#000" opacity=".35"/>
+            <circle cx="70" cy="220" r="34" fill="#111" stroke="#1f7a45" stroke-width="2"/>
+            <circle cx="70" cy="220" r="20" fill="none" stroke="#333" stroke-width="6"/>
+            <circle cx="230" cy="220" r="34" fill="#111" stroke="#1f7a45" stroke-width="2"/>
+            <circle cx="230" cy="220" r="20" fill="none" stroke="#333" stroke-width="6"/>
+            <path d="M 70 220 Q 70 160 100 145 L 175 130 Q 200 125 220 135 L 230 180 L 230 220 Z"
+                  fill="url(#fg)" stroke="#28a05a" stroke-width="1.5"/>
+            <rect x="96" y="182" width="106" height="18" rx="5" fill="#0d2a18" stroke="#1f7a45" stroke-width="1"/>
+            <ellipse cx="135" cy="105" rx="14" ry="16" fill="#c9a96e" opacity=".75"/>
+            <rect x="122" y="120" width="26" height="40" rx="8" fill="#163d25" stroke="#1f7a45" stroke-width="1"/>
+            <ellipse cx="165" cy="100" rx="13" ry="15" fill="#c9a96e" opacity=".75"/>
+            <rect x="153" y="114" width="24" height="38" rx="7" fill="#1f7a45" stroke="#28a05a" stroke-width="1"/>
+            <rect x="208" y="100" width="7" height="46" rx="3" fill="#163d25" stroke="#1f7a45" stroke-width="1"/>
+            <rect x="196" y="98" width="36" height="7" rx="3" fill="#0d3d22" stroke="#1f7a45" stroke-width="1"/>
+            <text x="150" y="80" font-size="18" text-anchor="middle" fill="#c9a96e" opacity=".8">♥</text>
+          </svg>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>© 2025 Bronze Sparks. All rights reserved.</p>
-        <p style="color:var(--green);font-size:.75rem;letter-spacing:.1em">RIDE TOGETHER. STAY SAFE.</p>
+      <div class="couple-content section">
+        <div class="section-label">Made for Two</div>
+        <h2 class="section-title">Every ride is a <em>shared story</em></h2>
+        <p>
+          Bronze Sparks scooters are thoughtfully engineered for couples — with dual-comfort seating,
+          synchronized riding modes, and an intimate design language that reflects the bond between two.
+        </p>
+        <p>
+          Because the best journeys aren't about the destination. They're about who's beside you.
+        </p>
+        <a class="btn-primary" href="shop.html">Find Your Pair</a>
       </div>
-    </footer>
+    </div>
   </div>
+
+  <section class="section fade-in">
+    <div class="section-label">In Numbers</div>
+    <h2 class="section-title">Trust built over <em>years</em></h2>
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-num">12K+</div>
+        <div class="stat-label">Happy Riders</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">98%</div>
+        <div class="stat-label">Safety Rating</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">15+</div>
+        <div class="stat-label">City Coverage</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5★</div>
+        <div class="stat-label">Average Review</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt fade-in" id="contact-section">
+    <div class="section-label">Get in Touch</div>
+    <h2 class="section-title">Let's find your <em>perfect ride</em></h2>
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <h3>We'd love to hear from you</h3>
+        <p>Have questions about our models, financing, or just want to take a test ride?
+          Our team is ready to assist. Give us a call — we're always happy to help.</p>
+        <div class="contact-detail">
+          <div class="icon">📞</div>
+          <div>
+            <strong>+62 21 5500 7777</strong>
+            <p>Mon – Sat, 09:00 – 18:00</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">✉️</div>
+          <div>
+            <strong>hello@bronzesparks.id</strong>
+            <p>We reply within 24 hours</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">📍</div>
+          <div>
+            <strong>Jl. Sudirman No. 88, Jakarta</strong>
+            <p>Showroom open daily</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Aria"/>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Wibowo"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="aria@example.com"/>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+62 812 ..."/>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="I'm interested in the Velvet Series..."></textarea>
+        </div>
+        <button class="btn-primary" onclick="handleFormSubmit(event)" style="width:100%;padding:14px">Send Message</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo"><a href="index.html"><span>Bronze</span> Sparks</a></div>
+        <p>Premium scooters crafted for those who seek elegance, safety, and the joy of shared journeys.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="#contact-section">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Products</h5>
+        <ul>
+          <li><a href="shop.html">Velvet Series</a></li>
+          <li><a href="shop.html">Mystic Duo</a></li>
+          <li><a href="shop.html">Aurora Lite</a></li>
+          <li><a href="shop.html">Heritage Classic</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Warranty Info</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Bronze Sparks. All rights reserved.</p>
+      <p style="color:var(--green);font-size:.75rem;letter-spacing:.1em">RIDE TOGETHER. STAY SAFE.</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
